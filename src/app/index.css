@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@custom-variant dark (&:where(.dark, .dark *));
+@import "tailwindcss";
+
+:root {
+  /* line-height: 1.5; */
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  background-color: var(--color-light);
+  box-sizing: border-box;
+
+  /* font-synthesis: none; */
+  /* text-rendering: optimizeLegibility; */
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+}
+
+.dark {
+  --bg-primary: var(--color-dark);
+}
+
+@theme {
+  --color-dark: #0c0b0b;
+  --color-light: #dddbdb;
+  --color-gray-500: #181818;
+  --color-gray-400: #4f4f4f;
+  --color-gray-300: #8f8f8f;
+  --color-gray-200: #d5d2d2;
+  --color-main-blue: #267ef2;
+  --color-main-blue-hover: #0964dc;
+
+  /* CAPTIONS */
+  --text-caption: 0.75rem;
+  --text-caption-medium: 0.875rem;
+  --text-caption-large: 1rem;
+
+  /* HEADLINES */
+  --text-headline-1: 2rem;
+  --text-headline-2: 1.5rem;
+  --text-headline-3: 1.25rem;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  /* place-items: center; */
+  min-width: 20rem;
+  min-height: 100vh;
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--bg-primary);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
