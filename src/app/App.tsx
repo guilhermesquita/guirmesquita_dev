@@ -1,17 +1,14 @@
 import Footer from "../components/Footer";
-import Header from "../components/Header";
-import { useThemeStore } from "../shared/stores/themeStore";
+import Header from "../components/header/Header";
 import AppRoutes from "./routes";
 
 function App() {
-  const { setMode } = useThemeStore();
   return (
     <>
-      <Header />
-      <button className="cursor-pointer" onClick={setMode}>
-        Toggle Theme
-      </button>
-      <main style={{ padding: "1rem" }}>
+      <div className="flex items-center justify-center">
+        <Header />
+      </div>
+      <main>
         <AppRoutes />
       </main>
       <Footer />

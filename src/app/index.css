@@ -9,12 +9,22 @@
   /* color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */
   background-color: var(--color-light);
-  box-sizing: border-box;
 
   /* font-synthesis: none; */
   /* text-rendering: optimizeLegibility; */
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden */
 }
 
 .dark {
@@ -43,10 +53,7 @@
 }
 
 body {
-  margin: 0;
-  display: flex;
-  /* place-items: center; */
-  min-width: 20rem;
+  padding: 10px 20px;
   min-height: 100vh;
   font-family: "JetBrains Mono", monospace;
   background-color: var(--bg-primary);

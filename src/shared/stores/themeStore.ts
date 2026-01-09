@@ -3,14 +3,15 @@ import { persist } from "zustand/middleware";
 
 interface VisualTheme {
   isDarkMode: boolean;
-  setMode: () => void;
+  setMode: (theme: "dark" | "light") => void;
 }
 
 export const useThemeStore = create<VisualTheme>()(
   persist(
     (set) => ({
       isDarkMode: true,
-      setMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
+      setMode: (theme: "dark" | "light") =>
+        set(() => ({ isDarkMode: theme === "dark" })),
     }),
     {
       name: "theme-storage",
