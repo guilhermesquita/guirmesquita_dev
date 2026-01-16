@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
-import Github from "../../assets/social-links/gitHub.svg?react";
-import Linkedin from "../../assets/social-links/linkedIn.svg?react";
-import Figma from "../../assets/social-links/figma.svg?react";
-import { routes, socialLinks } from "../../app/pages/data/links-header";
-import ChangeThemeToggle from "./components/changeThemeToogle";
-import Select from "../../shared/components/Select";
+import Github from "../../../assets/social-links/gitHub.svg?react";
+import Linkedin from "../../../assets/social-links/linkedIn.svg?react";
+import Figma from "../../../assets/social-links/figma.svg?react";
+import { routes, socialLinks } from "../../../app/pages/data/links-header";
+import Select from "../Select";
+import ChangeThemeToggle from "../../../components/header/components/changeThemeToogle";
 
 const activeStyle = ({ isActive }: { isActive: boolean }) => ({
   fontWeight: isActive ? "700" : "400",

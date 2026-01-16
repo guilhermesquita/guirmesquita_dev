@@ -23,14 +23,14 @@ export default function Home() {
             </div>
 
             <div className="flex-1 flex flex-col">
-              <h1 className="text-headline-1 font-bold text-gray-500 dark:text-white">
+              <h1 className="md:text-start text-center text-headline-1 font-bold text-gray-500 dark:text-white">
                 Guilherme Mesquita
               </h1>
-              <p className="text-gray-400 dark:text-gray-300 mb-6 text-caption-medium font-bold">
+              <p className="md:text-start text-center text-gray-400 dark:text-gray-300 mb-6 text-caption font-bold">
                 Full-Stack Developer | Next.js, React, Node.js
               </p>
 
-              <p className="text-gray-500 dark:text-white text-caption leading-relaxed mb-12 max-w-[393px]">
+              <p className="md:text-start text-center text-gray-500 dark:text-white text-caption leading-relaxed mb-12 max-w-[393px]">
                 Desenvolvedor Full Stack baseado no Brasil, com experiência em
                 desenvolvimento web moderno. Desenvolvo aplicações escaláveis e
                 de alta performance com Next.js, TypeScript e ferramentas

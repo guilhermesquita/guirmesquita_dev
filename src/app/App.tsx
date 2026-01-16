@@ -1,5 +1,4 @@
-import Footer from "../components/Footer";
-import Header from "../components/header/Header";
+import Header from "../shared/components/header/Header";
 import AppRoutes from "./routes";
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
       <main>
         <AppRoutes />
       </main>
-      <Footer />
     </>
   );
 }
