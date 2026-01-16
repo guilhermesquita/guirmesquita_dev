@@ -17,19 +17,42 @@ export default function Header() {
   const renderSocialLinkIcon = (socialName: string) => {
     switch (socialName) {
       case "GitHub":
-        return <Github className="w-4 h-4 cursor-pointer icon" />;
+        return <Github className="w-4 h-4 cursor-pointer hover:text-gray-300 duration-200" />;
       case "LinkedIn":
-        return <Linkedin className="w-4 h-4 cursor-pointer icon" />;
+        return <Linkedin className="w-4 h-4 cursor-pointer hover:text-gray-300 duration-200" />;
       case "Figma":
-        return <Figma className="w-4 h-4 cursor-pointer icon" />;
+        return <Figma className="w-4 h-4 cursor-pointer hover:text-gray-300 duration-200" />;
       default:
         return null;
     }
   };
 
+  const socialLinksRender = () => {
+    return socialLinks.map((social) => (
+      <a
+  key={social.name}
+  href={social.href}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {renderSocialLinkIcon(social.name)}
+</a>
+    ));
+  };
+
   return (
-    <header className="w-[550px] flex justify-between items-center mt-8 mb-16 gap-9">
-      <div className="flex justify-between items-center w-[487px] py-2 px-5 rounded border border-gray-400 bg-gray-400/10 text-caption text-white">
+    <header className="w-full md:w-[34.375rem] flex flex-col md:flex-row md:items-center md:justify-between mt-8 mb-16 gap-4 md:gap-9">
+      <div className="flex items-center gap-3 justify-between order-1 md:order-2">
+        <div className="flex md:hidden gap-3 text-white">
+        {socialLinksRender()}
+  </div>
+        <div className="flex items-center gap-3">
+          <ChangeThemeToggle />
+          <Select />
+        </div>
+      </div>
+
+      <div className="flex md:justify-between justify-center items-center md:w-[30.4375rem] py-2 px-5 rounded border border-gray-400 bg-gray-400/10 text-caption text-white order-2 md:order-1">
         <nav>
           {routes.map((route) => (
             <NavLink key={route.name} to={route.href} style={activeStyle}>
@@ -38,23 +61,10 @@ export default function Header() {
           ))}
         </nav>
 
-        <nav className="flex gap-3">
-          {socialLinks.map((social) => (
-            <NavLink
-              key={social.name}
-              to={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {renderSocialLinkIcon(social.name)}
-            </NavLink>
-          ))}
-        </nav>
-      </div>
+        <nav className="flex gap-3 md:order-2 hidden md:flex">
+  {socialLinksRender()}
+</nav>
 
-      <div className="flex items-center gap-3">
-        <ChangeThemeToggle />
-        <Select />
       </div>
     </header>
   );

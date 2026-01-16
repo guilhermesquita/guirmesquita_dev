@@ -348,7 +348,8 @@ const Select: React.FC = () => {
   };
 
   return (
-    <div className="max-w-sm mx-auto ">
+    <div className="max-w-sm ">
+      {" "}
       <div className="flex relative">
         <button
           type="button"
