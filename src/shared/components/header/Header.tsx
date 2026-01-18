@@ -4,7 +4,7 @@ import Linkedin from "../../../assets/social-links/linkedIn.svg?react";
 import Figma from "../../../assets/social-links/figma.svg?react";
 import { routes, socialLinks } from "../../../app/pages/data/links-header";
 import Select from "../Select";
-import ChangeThemeToggle from "../../../components/header/components/changeThemeToogle";
+import ChangeThemeToggle from "./components/changeThemeToogle";
 
 const activeStyle = ({ isActive }: { isActive: boolean }) => ({
   fontWeight: isActive ? "700" : "400",
@@ -52,7 +52,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="flex md:justify-between justify-center items-center md:w-[30.4375rem] py-2 px-5 rounded border border-gray-400 bg-gray-400/10 text-caption text-white order-2 md:order-1">
+      <div className="flex md:justify-between justify-center items-center md:w-[30.4375rem] py-2 px-5 rounded border border-gray-400 bg-gray-400/10 backdrop-blur-md text-caption text-white order-2 md:order-1">
         <nav>
           {routes.map((route) => (
             <NavLink key={route.name} to={route.href} style={activeStyle}>

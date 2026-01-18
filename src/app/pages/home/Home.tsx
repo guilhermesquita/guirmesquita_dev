@@ -1,10 +1,11 @@
-// import AboutMe from "./about_me/AboutMe";
+import Skills from "../../../shared/skills/Skills";
 import PinIcon from "../../../assets/icons/pin_fill.svg?react";
 import { Button } from "../../../assets/button/Button";
 
 export default function Home() {
   return (
-    <section>
+    <>
+      <section>
       <div className="flex justify-center  ">
         <div className=" rounded-lg">
           <div className="flex flex-col md:flex-row gap-8 ">
@@ -43,6 +44,8 @@ export default function Home() {
       <div className="flex justify-center  ">
         <Button placeholder="Download CV" onClick={() => {}} />
       </div>
-    </section>
+      </section>
+      <Skills />
+    </>
   );
 }

@@ -4,7 +4,7 @@ import AppRoutes from "./routes";
 function App() {
   return (
     <>
-      <div className="flex items-center justify-center">
+      <div className="md:sticky md:top-0 md:z-50 flex items-center justify-center w-full">
         <Header />
       </div>
       <main>

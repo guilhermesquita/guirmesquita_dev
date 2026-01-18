@@ -1,8 +1,8 @@
 import React from "react";
-import LightModeIcon from "../../../assets/icons/sun_light.svg?react";
-import DarkModeIcon from "../../../assets/icons/moon_light.svg?react";
-import { useThemeStore } from "../../../shared/stores/themeStore";
-import Toggle from "../../../shared/components/Toogle";
+import LightModeIcon from "../../../../assets/icons/sun_light.svg?react";
+import DarkModeIcon from "../../../../assets/icons/moon_light.svg?react";
+import { useThemeStore } from "../../../stores/themeStore";
+import Toggle from "../../Toogle";
 
 interface ChangeThemeToggleProps {
   disabled?: boolean;
