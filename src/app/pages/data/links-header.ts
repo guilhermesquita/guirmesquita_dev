@@ -1,18 +1,18 @@
 export const routes = [
   {
-    name: "guimesquita",
+    name: "nav.home",
     href: "/",
   },
   {
-    name: "formações",
+    name: "nav.education",
     href: "/portfolio",
   },
   {
-    name: "experiência",
+    name: "nav.experience",
     href: "/about",
   },
   {
-    name: "projetos",
+    name: "nav.projects",
     href: "/about",
   },
 ];

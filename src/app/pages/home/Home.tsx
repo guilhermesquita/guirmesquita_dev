@@ -1,8 +1,10 @@
 import Skills from "../../../shared/skills/Skills";
 import PinIcon from "../../../assets/icons/pin_fill.svg?react";
 import { Button } from "../../../assets/button/Button";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <>
       <section>
@@ -18,7 +20,7 @@ export default function Home() {
               <div className="flex items-center gap-1 text-gray-400">
                 <PinIcon className="w-4 h-4 text-gray-500 dark:text-gray-200" />
                 <p className="text-caption text-gray-400 dark:text-gray-300">
-                  Manaus, Am, Brasil
+                  {t('location')}
                 </p>
               </div>
             </div>
@@ -28,21 +30,18 @@ export default function Home() {
                 Guilherme Mesquita
               </h1>
               <p className="md:text-start text-center text-gray-400 dark:text-gray-300 mb-6 text-caption font-bold">
-                Full-Stack Developer | Next.js, React, Node.js
+                {t('jobTitle')}
               </p>
 
               <p className="md:text-start text-center text-gray-500 dark:text-white text-caption leading-relaxed mb-12 max-w-[393px]">
-                Desenvolvedor Full Stack baseado no Brasil, com experiência em
-                desenvolvimento web moderno. Desenvolvo aplicações escaláveis e
-                de alta performance com Next.js, TypeScript e ferramentas
-                modernas, priorizando boa arquitetura e experiência do usuário.
+                {t("aboutMeDescription")}
               </p>
             </div>
           </div>
         </div>
       </div>
       <div className="flex justify-center  ">
-        <Button placeholder="Download CV" onClick={() => {}} />
+        <Button placeholder={t('downloadCV')} onClick={() => {}} />
       </div>
       </section>
       <Skills />

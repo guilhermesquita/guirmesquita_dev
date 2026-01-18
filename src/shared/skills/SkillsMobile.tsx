@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { SKILLS_DATA, type SkillCategory } from './skillsData';
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
+import { useTranslation } from 'react-i18next';
 
 export default function SkillsMobile() {
+  const { t } = useTranslation(); 
   const categories: SkillCategory[] = ['Frontend', 'Backend', 'Other'];
   const [activeCategory, setActiveCategory] = useState<SkillCategory>('Frontend');
 
@@ -36,7 +38,7 @@ export default function SkillsMobile() {
               }
             `}
           >
-            {category === 'Other' ? 'Outros' : category}
+            {category === 'Other' ? t('others') : category}
           </button>
         ))}
       </div>

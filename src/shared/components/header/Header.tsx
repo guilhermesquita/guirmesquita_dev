@@ -5,6 +5,7 @@ import Figma from "../../../assets/social-links/figma.svg?react";
 import { routes, socialLinks } from "../../../app/pages/data/links-header";
 import Select from "../Select";
 import ChangeThemeToggle from "./components/changeThemeToogle";
+import { useTranslation } from "react-i18next";
 
 const activeStyle = ({ isActive }: { isActive: boolean }) => ({
   fontWeight: isActive ? "700" : "400",
@@ -14,6 +15,8 @@ const activeStyle = ({ isActive }: { isActive: boolean }) => ({
 });
 
 export default function Header() {
+  const { t } = useTranslation();
+  
   const renderSocialLinkIcon = (socialName: string) => {
     switch (socialName) {
       case "GitHub":
@@ -56,7 +59,7 @@ export default function Header() {
         <nav>
           {routes.map((route) => (
             <NavLink key={route.name} to={route.href} style={activeStyle}>
-              <span className="hover:text-main-blue">{route.name}</span>
+              <span className="hover:text-main-blue">{t(route.name)}</span>
             </NavLink>
           ))}
         </nav>

@@ -1,8 +1,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { SKILLS_DATA, type SkillCategory } from './skillsData';
+import { useTranslation } from 'react-i18next';
 
 export default function SkillsDesktop() {
+  const { t } = useTranslation(); 
   const categories: SkillCategory[] = ['Frontend', 'Backend', 'Other'];
   const [activeCategory, setActiveCategory] = useState<SkillCategory>('Frontend');
   const sectionRefs = useRef<Record<SkillCategory, HTMLDivElement | null>>({
@@ -62,7 +64,7 @@ export default function SkillsDesktop() {
               }
             `}
           >
-            {category === 'Other' ? 'Outros' : category}
+            {category === 'Other' ? t('others') : category}
             <img src="" alt="" />
           </button>
         ))}
@@ -77,7 +79,7 @@ export default function SkillsDesktop() {
           >
             <h3 className="text-headline-3 font-bold text-gray-400 dark:text-gray-200 mb-8 flex items-center gap-2">
               <span className="w-8 h-1 bg-blue-600 rounded-full"></span>
-              {category === 'Other' ? 'Outros' : category}
+              {category === 'Other' ? t('others') : category}
             </h3>
             
             <div className="grid grid-cols-3 gap-6">

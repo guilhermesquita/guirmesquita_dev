@@ -1,0 +1,15 @@
+{
+    "location": "Manaus, Am, Brazil",
+    "jobTitle": "Full-Stack Developer | Next.js, React, Node.js",
+    "aboutMeDescription": "Full Stack Developer based in Brazil, with experience in modern web development. I build scalable and high-performance applications with Next.js, TypeScript and modern tools, prioritizing good architecture and user experience.",
+    "downloadCV": "Download CV",
+    "skillsIntro": "solid experience in",
+    "skillsTitle": "TECHS:",
+    "nav": {
+        "home": "guimesquita",
+        "education": "education",
+        "experience": "experience",
+        "projects": "projects"
+    },
+    "others": "Others"
+}
