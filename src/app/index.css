@@ -73,3 +73,47 @@ body {
     background-color: #f9f9f9;
   }
 }
+
+input::placeholder {
+  padding-left: 8px;
+  color: var(--color-gray-300);
+  font-size: var(--text-caption);
+}
+
+textarea {
+  resize: none;
+  padding-top: 16px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+textarea::placeholder {
+  padding-left: 8px;
+  color: var(--color-gray-300);
+  font-size: var(--text-caption);
+  line-height: calc(100px - 32px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-main-blue-hover); 
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-main-blue); 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-main-blue-hover); 
+  cursor: pointer;
+}

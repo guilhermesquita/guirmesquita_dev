@@ -11,5 +11,14 @@
         "experience": "experience",
         "projects": "projects"
     },
-    "others": "Others"
+    "others": "Others",
+    "contactForm": {
+        "title": "Get in <br /> touch!",
+        "subtitle": "Let's build something together!",
+        "namePlaceholder": "Name",
+        "surnamePlaceholder": "Surname",
+        "emailPlaceholder": "Email",
+        "messagePlaceholder": "Type your message here...",
+        "button": "Send"
+    }
 }
