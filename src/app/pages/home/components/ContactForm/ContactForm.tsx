@@ -1,13 +1,53 @@
 import { useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
-import { Input } from "../../../../../shared/components/form/input";
-import ContactIcon from "../../../../../assets/icons/contact.svg?react"
+import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
+
+import { Input, Spinner } from "@/shared/components";
+import { useToastStore } from "@/shared/stores";
+import ContactIcon from "@/assets/icons/contact.svg?react"
+
+type ContactFormData = {
+    name: string
+    surname: string
+    email: string
+    message: string
+}
 
 export const ContactForm = () => {
     const { t } = useTranslation();
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const addToast = useToastStore((state) => state.addToast);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<ContactFormData>()
+    const [stateSendMail, setStateSendMail] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+    const sendMail = (data: ContactFormData) => {
+        setStateSendMail('loading');
+        emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            {
+                name: data.name,
+                surname: data.surname,
+                email: data.email,
+                message: data.message,
+                title: "Novo contato pelo portfolio"
+            },
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        ).then(() => {
+            setStateSendMail('success');
+            addToast({ message: t("contactForm.successMessage"), type: "success" });
+            reset();
+        }).catch(() => {
+            setStateSendMail('error');
+            addToast({ message: t("contactForm.errorMessage"), type: "error" });
+        });
+    }
 
     return (
         <section className="w-full  text-white py-24 px-6 lg:px-48 flex justify-center">
@@ -28,23 +68,39 @@ export const ContactForm = () => {
                 </div>
 
                 <div className="flex-1">
-                    <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Input placeholder={t("contactForm.namePlaceholder")} value={name} type="text" onChange={setName} />
-                        <Input placeholder={t("contactForm.surnamePlaceholder")} value={name} type="text" onChange={setName} />
+                    <form
+                        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                        onSubmit={handleSubmit(sendMail)}
+                        noValidate
+                        onKeyDown={(e) => {
+                            if (e.ctrlKey && e.key === 'Enter') {
+                                handleSubmit(sendMail)();
+                            }
+                        }}
+                    >
+                        <Input
+                            placeholder={t("contactForm.namePlaceholder")}
+                            register={register("name", { required: 'Name is required' })}
+                            className={errors.name ? "border-red-400" : ""}
+                        />
+                        <Input
+                            placeholder={t("contactForm.surnamePlaceholder")}
+                            register={register("surname")}
+                        />
 
                         <div className="md:col-span-2 space-y-4">
                             <Input
                                 placeholder={t("contactForm.emailPlaceholder")}
-                                value={email}
                                 type="email"
-                                onChange={setEmail}
+                                register={register("email", { required: 'Email is required', pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email address" } })}
+                                className={errors.email ? "border-red-400" : ""}
                             />
 
                             <Input
                                 placeholder={t("contactForm.messagePlaceholder")}
-                                value={message}
                                 type="textarea"
-                                onChange={setMessage}
+                                register={register("message", { required: 'Message is required' })}
+                                className={errors.message ? "border-red-400" : ""}
                             />
                         </div>
 
@@ -52,7 +108,11 @@ export const ContactForm = () => {
                             type="submit"
                             className="cursor-pointer md:col-span-2 bg-main-blue hover:bg-main-blue-hover transition-colors h-12 rounded-md text-caption-large font-bold"
                         >
-                            {t("contactForm.button")}
+                            {stateSendMail === 'loading' ? <div className="w-full flex justify-center"> <Spinner
+                                trackColorClass="text-gray-200"
+                                indicatorColorClass="text-white"
+                                className="text-caption"
+                            /> </div> : t("contactForm.button")}
                         </button>
                     </form>
                 </div>

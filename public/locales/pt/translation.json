@@ -19,6 +19,8 @@
         "surnamePlaceholder": "Sobrenome",
         "emailPlaceholder": "Email",
         "messagePlaceholder": "Digite sua mensagem aqui...",
-        "button": "Enviar"
+        "button": "Enviar",
+        "successMessage": "Email enviado com sucesso!",
+        "errorMessage": "Erro ao enviar email"
     }
 }

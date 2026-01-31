@@ -1,45 +1,54 @@
-import { forwardRef, type ComponentProps, type ChangeEvent, type Ref } from "react";
+import { forwardRef } from "react";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
-type InputProps = Omit<ComponentProps<"input">, "onChange" | "value" | "type"> & {
-    value: string;
-    onChange: (value: string) => void;
-    type?: "text" | "email" | "textarea";
+type CommonProps = {
+    className?: string;
+    register?: UseFormRegisterReturn;
+    placeholder?: string;
 };
 
-export const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
-    ({ placeholder, value, type = "text", className = "", onChange, ...props }, ref) => {
-        const isTextarea = type === "textarea";
-        const baseClass = `w-full p-2 border border-gray-400 bg-gray-500 rounded-md focus:outline-none text-gray-200 ${className} text-caption`;
+type InputFieldProps = CommonProps &
+    React.InputHTMLAttributes<HTMLInputElement> & {
+        type?: "text" | "email";
+    };
 
-        const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-            onChange(e.target.value);
-        };
+type TextareaFieldProps = CommonProps &
+    React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+        type: "textarea";
+    };
 
-        if (isTextarea) {
-            return (
-                <textarea
-                    ref={ref as Ref<HTMLTextAreaElement>}
-                    placeholder={placeholder}
-                    value={value}
-                    onChange={handleChange}
-                    className={baseClass}
-                    {...(props as ComponentProps<"textarea">)}
-                />
-            );
-        }
+type Props = InputFieldProps | TextareaFieldProps;
+
+export const Input = forwardRef<
+    HTMLInputElement | HTMLTextAreaElement,
+    Props
+>(({ type = "text", className = "", register, ...rest }, ref) => {
+    const baseClass = `w-full p-2 border border-gray-400 bg-gray-500 rounded-md focus:outline-none text-gray-200 ${className} text-caption`;
+
+    if (type === "textarea") {
+        const textareaProps = rest as React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
         return (
-            <input
-                ref={ref as Ref<HTMLInputElement>}
-                type={type}
-                placeholder={placeholder}
-                value={value}
-                onChange={handleChange}
+            <textarea
+                ref={ref as React.Ref<HTMLTextAreaElement>}
                 className={baseClass}
-                {...props}
+                {...register}
+                {...textareaProps}
             />
         );
     }
-);
+
+    const inputProps = rest as React.InputHTMLAttributes<HTMLInputElement>;
+
+    return (
+        <input
+            ref={ref as React.Ref<HTMLInputElement>}
+            type={type}
+            className={baseClass}
+            {...register}
+            {...inputProps}
+        />
+    );
+});
 
 Input.displayName = "Input";

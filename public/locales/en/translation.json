@@ -19,6 +19,8 @@
         "surnamePlaceholder": "Surname",
         "emailPlaceholder": "Email",
         "messagePlaceholder": "Type your message here...",
-        "button": "Send"
+        "button": "Send",
+        "successMessage": "Email sent successfully!",
+        "errorMessage": "Error sending email"
     }
 }
