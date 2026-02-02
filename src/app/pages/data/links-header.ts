@@ -5,15 +5,15 @@ export const routes = [
   },
   {
     name: "nav.education",
-    href: "/portfolio",
+    href: "/education",
   },
   {
     name: "nav.experience",
-    href: "/about",
+    href: "/experience",
   },
   {
     name: "nav.projects",
-    href: "/about",
+    href: "/projects",
   },
 ];
 
