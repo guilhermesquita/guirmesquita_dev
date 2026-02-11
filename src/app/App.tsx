@@ -7,7 +7,7 @@ import { Footer } from "./pages/home/components/Footer/Footer";
 function App() {
   return (
     <>
-      <img src={bgImage} alt="Background" className="fixed inset-0 w-full h-full object-cover" />
+      <img src={bgImage} alt="Background" className="fixed inset-0 w-full  object-cover" />
       <div className="relative w-full min-h-screen flex flex-col overflow-x-hidden">
         <ToastContainer />
         <div className="md:sticky md:top-0 md:z-50 flex items-center justify-center w-full">

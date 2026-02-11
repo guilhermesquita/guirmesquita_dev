@@ -6,6 +6,14 @@ import { ContactForm } from "./components/ContactForm/ContactForm";
 
 export default function Home() {
   const { t } = useTranslation();
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/blank.pdf";
+    link.download = "Guilherme-Mesquita-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <>
       <section>
@@ -41,8 +49,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center  ">
-          <Button placeholder={t('downloadCV')} onClick={() => { }} />
+        <div className="flex justify-center">
+          <Button
+            placeholder={t('downloadCV')}
+            onClick={downloadCV}
+          />
         </div>
       </section>
       <Skills />
