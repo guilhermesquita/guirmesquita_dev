@@ -25,6 +25,7 @@ export default function Home() {
                   src="https://pub-94d0474e66f04a0a996f79c17300f498.r2.dev/image-user/1726621576606_photo.png"
                   className="w-36 h-36 rounded-full object-cover "
                   alt="Guilherme Mesquita"
+                  fetchPriority="high"
                 />
                 <div className="flex items-center gap-1 text-gray-400">
                   <PinIcon className="w-4 h-4 text-gray-500 dark:text-gray-200" />

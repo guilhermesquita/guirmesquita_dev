@@ -22,5 +22,31 @@
         "button": "Enviar",
         "successMessage": "Email enviado com sucesso!",
         "errorMessage": "Erro ao enviar email"
+    },
+    "educationSection": {
+        "descriptionLabenu": "Programa intensivo de 400 horas com foco no desenvolvimento web fullstack moderno, cobrindo desde a construção de APIs robustas no back-end até interfaces dinâmicas e responsivas no front-end. No back-end, o treinamento abordou Node.js com criação de APIs RESTful, autenticação com JWT, integração com bancos de dados relacionais e não relacionais, além de boas práticas de arquitetura e segurança. No front-end, o foco foi em React.js, com componentização, gerenciamento de estado, consumo de APIs e desenvolvimento de aplicações de página única (SPAs). Ao longo do programa, foram desenvolvidos projetos práticos que simulam cenários reais do mercado, consolidando habilidades como versionamento com Git, deploy de aplicações e trabalho com metodologias ágeis.",
+        "descriptionADS": "Curso superior tecnológico com formação voltada para o desenvolvimento, análise e manutenção de sistemas de software. A grade curricular abrange fundamentos de programação, estruturas de dados, engenharia de software, banco de dados, redes de computadores e desenvolvimento de aplicações web e mobile.Durante o curso, foram trabalhadas competências técnicas e analíticas para modelagem de sistemas, desenvolvimento orientado a objetos, versionamento de código e aplicação de metodologias ágeis como Scrum e Kanban. O programa também contempla disciplinas de gestão de projetos e qualidade de software, preparando para atuar em todas as etapas do ciclo de vida de um sistema.",
+        "titleADS": "Análise e Des. de Sistemas"
+    },
+    "experienceSection": {
+        "descriptionAgrosmart": "Atuo como Desenvolvedor Front-end numa empresa AI-first, criando de interfaces escaláveis e performáticas, aplicando Clean Architecture no Front-end, com organização clara de responsabilidades, separação de camadas e foco em manutenibilidade. Gerei impacto com a melhoria da qualidade e confiabilidade da aplicação por meio da implementação de testes automatizados com Playwright e Jest, cobrindo fluxos críticos da interface. Atuação com tecnologias Front-end com React.js, utilizando TailwindCSS, Zustand, TanStack Query e arquitetura baseada em Clean Architecture. Integração com IA, Chatbots e uploads via Amazon S3. Redux Saga e Material UI em projetos paralelos. Testes automatizados com Playwright e Jest, seguindo boas práticas como SOLID e DDD adaptado ao Front-end. Trabalho em ambiente ágil com Scrum, Jira e Slack.",
+        "descriptionAquaApia": "Atuação em startup com desenvolvimento de aplicações de grande escala com Node.js com Node.js no contexto de microsserviços, utilizando Express.js, Redis, Keycloak, Docker e RabbitMQ. Colaborei de forma próxima com equipes de DevOps, QA e Design, contribuindo para a integração de dispositivos IoT com softwares. Auxiliei na pipeline de CI/CD, trabalhando com GitLab, e desenvolvi funcionalidades inovadoras e de alto valor para os usuários finais, garantindo a entrega de todos os módulos sob minha responsabilidade dentro do prazo. Atuação com Node.js (microsserviços com Express.js), TypeORM, Redis, Keycloak, Docker e RabbitMQ. suporte à pipeline CI/CD no GitLab. Experiência com React Native. Conteinerização com Docker e orquestração com Docker Swarm. Para Metodologia Scrum, trabalhamos com Teams e Jira. Trabalhei com desenvolvimento TDD em Jest. DDD e Clean Architecture na arquitetura. Deploy com Amazon EC2.",
+        "descriptionConnecthus": "Atuo no desenvolvimento e na evolução de aplicações web modernas utilizando React.js e TypeScript. Minha rotina envolve a criação de interfaces responsivas e de alta performance, priorizando sempre a melhor experiência do usuário e a acessibilidade. Sou responsável por implementar arquiteturas frontend robustas e escaláveis — aplicando Feature-Sliced Design (FSD) e padrões MVC —, além de garantir a resiliência e a qualidade do software através de testes automatizados E2E com Playwright. No dia a dia, gerencio estados complexos e consumo de dados em tempo real usando Zustand e TanStack Query, operando em um ambiente ágil e altamente colaborativo.",
+        "descriptionRedMaxx": "Atuei no desenvolvimento e na manutenção de aplicações web de ponta a ponta, utilizando Angular 19 no frontend e Node.js com Fastify no backend. Fui responsável por criar interfaces modernas, responsivas e escaláveis baseadas em componentes com NG-ZORRO e TypeScript. No backend, construí APIs REST performáticas e estruturei a modelagem e integração de bancos de dados PostgreSQL utilizando o Prisma ORM. Além disso, tive participação ativa em decisões arquiteturais complexas (como a aplicação de DDD no frontend e MVC no backend) e na automação de processos, implementando pipelines de CI/CD via GitLab e containerização com Docker",
+        "yearAgrosmart": "ag/2024 - mar/2026",
+        "yearAquaApia": "mar/2023 - fev/2024",
+        "yearConnecthus": "Mar/2026 - atual",
+        "yearRedMaxx": "Fev/2025 - Set/2025",
+        "infoAgrosmart": "Remoto",
+        "infoAquaApia": "Manaus (híbrido)",
+        "infoConnecthus": "Híbrido (Manaus)",
+        "infoRedMaxx": "Remoto"
+    },
+    "projectsSection": {
+        "deploy": "Deploy",
+        "repository": "Repositório",
+        "descriptionSoebooks": "Projeto real para um catálogo completo de compras de livros com autenticação e integração com Supabase.",
+        "descriptionSebap": "Plataforma como portal do aluno e gerenciamento de matérias para um seminário teológico. Com autenticação e integração com Supabase.",
+        "descriptionADAF": "Sistema completo de gerenciamento para a ADAF (Agência de Defesa Agropecuária e Florestal do Estado do Amazonas)."
     }
 }
