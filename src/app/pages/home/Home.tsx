@@ -9,7 +9,7 @@ export default function Home() {
   const { t } = useTranslation();
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/blank.pdf";
+    link.href = "/pt_br_full.pdf";
     link.download = "Guilherme-Mesquita-CV.pdf";
     document.body.appendChild(link);
     link.click();
